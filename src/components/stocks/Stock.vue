@@ -4,7 +4,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">
           {{ stock.name }}
-          <small>(Price: {{ stock.price }})</small>
+          <small>(Price: {{ stock.price }}) | Quantity: {{ stock.quantity }}</small>
         </h3>
       </div>
       <div class="panel-body">
@@ -42,6 +42,7 @@
           quantity: parseInt(this.quantity)
         };
         console.log("The order is: ", order);
+        this.$store.dispatch('buyStock', order);
         this.quantity = 0;
       }
     }
