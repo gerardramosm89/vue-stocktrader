@@ -37,14 +37,15 @@ import { mapActions} from 'vuex';
     },
     methods: {
       ...mapActions([
-
+        'sellStock'
       ]),
       sellStock() {
         const order = {
-          stockId: this.stockId,
+          stockId: this.stock.id,
           stockPrice: this.stock.price,
           quantity: this.quantity
         };
+        this.sellStock();
       }
     }
   }
